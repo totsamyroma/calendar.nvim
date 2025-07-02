@@ -1,0 +1,33 @@
+# Logfile created on 2025-07-02 13:51:39 +0300 by logger.rb/v1.7.0
+I, [2025-07-02T13:51:53.854206 #40705]  INFO -- : INPUT: {"id": 1, "jsonrpc": "2.0", "method": "list_calendars", "params": []}
+I, [2025-07-02T13:51:53.854721 #40705]  INFO -- : OUTPUT: {"jsonrpc":"2.0","id":1,"result":[{"name":"work","url":"https://example.com/calendar.ics"}]}
+I, [2025-07-02T13:52:12.856950 #40705]  INFO -- : INPUT: {"id": 2, "jsonrpc": "2.0", "method": "list_calendars", "params": []}
+I, [2025-07-02T13:52:12.857129 #40705]  INFO -- : OUTPUT: {"jsonrpc":"2.0","id":2,"result":[{"name":"work","url":"https://example.com/calendar.ics"}]}
+I, [2025-07-02T13:52:31.682260 #40705]  INFO -- : INPUT: {"id": 3, "jsonrpc": "2.0", "method": "add_calendar", "params": {"name": "foo"}}
+I, [2025-07-02T13:52:31.682522 #40705]  INFO -- : OUTPUT: {"jsonrpc":"2.0","id":3,"result":"Added calendar foo"}
+I, [2025-07-02T13:52:39.783532 #40705]  INFO -- : INPUT: {"id": 4, "jsonrpc": "2.0", "method": "list_calendars", "params": []}
+I, [2025-07-02T13:52:39.783852 #40705]  INFO -- : OUTPUT: {"jsonrpc":"2.0","id":4,"result":[{"name":"work","url":"https://example.com/calendar.ics"}]}
+I, [2025-07-02T14:09:17.570922 #58186]  INFO -- : INPUT: {"method": "list_calendars", "jsonrpc": "2.0", "id": 1, "params": []}
+I, [2025-07-02T14:09:17.571084 #58186]  INFO -- : OUTPUT: {"jsonrpc":"2.0","id":1,"result":[{"name":"work","url":"https://example.com/calendar.ics"}]}
+I, [2025-07-02T14:10:05.979585 #58186]  INFO -- : INPUT: {"method": "list_calendars", "jsonrpc": "2.0", "id": 2, "params": []}
+I, [2025-07-02T14:10:05.979909 #58186]  INFO -- : OUTPUT: {"jsonrpc":"2.0","id":2,"result":[{"name":"work","url":"https://example.com/calendar.ics"}]}
+I, [2025-07-02T14:12:43.697993 #64195]  INFO -- : INPUT: {"id": 1, "jsonrpc": "2.0", "method": "list_calendars", "params": []}
+I, [2025-07-02T14:12:43.698131 #64195]  INFO -- : OUTPUT: {"jsonrpc":"2.0","id":1,"result":[{"name":"work","url":"https://example.com/calendar.ics"}]}
+I, [2025-07-02T14:17:49.834622 #72145]  INFO -- : INPUT: {"id": 1, "jsonrpc": "2.0", "method": "list_calendars", "params": []}
+I, [2025-07-02T14:17:49.834808 #72145]  INFO -- : OUTPUT: {"jsonrpc":"2.0","id":1,"result":[{"name":"work","url":"https://example.com/calendar.ics"}]}
+I, [2025-07-02T14:19:41.348000 #74940]  INFO -- : INPUT: {"method": "list_calendars", "jsonrpc": "2.0", "id": 1, "params": []}
+I, [2025-07-02T14:19:41.348236 #74940]  INFO -- : OUTPUT: {"jsonrpc":"2.0","id":1,"result":[{"name":"work","url":"https://example.com/calendar.ics"}]}
+I, [2025-07-02T14:22:56.979643 #78379]  INFO -- : INPUT: {"method": "list_calendars", "jsonrpc": "2.0", "id": 1, "params": []}
+I, [2025-07-02T14:22:56.980104 #78379]  INFO -- : OUTPUT: {"jsonrpc":"2.0","id":1,"result":[{"name":"work","url":"https://example.com/calendar.ics"}]}
+I, [2025-07-02T14:23:47.828726 #80791]  INFO -- : INPUT: {"method": "list_calendars", "jsonrpc": "2.0", "id": 1, "params": []}
+I, [2025-07-02T14:23:47.829284 #80791]  INFO -- : OUTPUT: {"jsonrpc":"2.0","id":1,"result":[{"name":"work","url":"https://example.com/calendar.ics"}]}
+I, [2025-07-02T14:30:37.862638 #93464]  INFO -- : INPUT: {"id": 1, "jsonrpc": "2.0", "method": "list_calendars", "params": []}
+I, [2025-07-02T14:30:37.862784 #93464]  INFO -- : OUTPUT: {"jsonrpc":"2.0","id":1,"result":[{"name":"work","url":"https://example.com/calendar.ics"}]}
+I, [2025-07-02T14:32:55.083404 #97336]  INFO -- : INPUT: {"method": "list_calendars", "jsonrpc": "2.0", "id": 1, "params": []}
+I, [2025-07-02T14:32:55.083723 #97336]  INFO -- : OUTPUT: {"jsonrpc":"2.0","id":1,"result":[{"name":"work","url":"https://example.com/calendar.ics"}]}
+I, [2025-07-02T14:34:52.785896 #1342]  INFO -- : INPUT: {"method": "list_calendars", "jsonrpc": "2.0", "id": 1, "params": []}
+I, [2025-07-02T14:34:52.786234 #1342]  INFO -- : OUTPUT: {"jsonrpc":"2.0","id":1,"result":[{"name":"work","url":"https://example.com/calendar.ics"}]}
+I, [2025-07-02T14:35:06.647714 #2120]  INFO -- : INPUT: {"method": "list_calendars", "jsonrpc": "2.0", "id": 1, "params": []}
+I, [2025-07-02T14:35:06.648137 #2120]  INFO -- : OUTPUT: {"jsonrpc":"2.0","id":1,"result":[{"name":"work","url":"https://example.com/calendar.ics"}]}
+I, [2025-07-02T14:36:13.323637 #3733]  INFO -- : INPUT: {"method": "list_calendars", "jsonrpc": "2.0", "id": 1, "params": []}
+I, [2025-07-02T14:36:13.324084 #3733]  INFO -- : OUTPUT: {"jsonrpc":"2.0","id":1,"result":[{"name":"work","url":"https://example.com/calendar.ics"}]}

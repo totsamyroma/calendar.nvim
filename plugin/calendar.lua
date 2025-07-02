@@ -1,3 +1,5 @@
+local rpc = require("rpc.init")
+
 vim.api.nvim_create_user_command("Calendar", function(opts)
   local args = opts.fargs
   if #args < 2 then
@@ -33,3 +35,36 @@ end, {
   nargs = "+",
   complete = nil,
 })
+
+-- Start the calendar server
+vim.api.nvim_create_user_command("CalendarRPCStart", function()
+  rpc.start_server()
+end, { nargs = "*" })
+
+-- Add a calendar
+vim.api.nvim_create_user_command("CalendarRPCAdd", function(opts)
+  local args = vim.split(opts.args, " ")
+  local name, url = args[1], args[2]
+  rpc.send_request("add_calendar", { name = name, url = url }, function(resp)
+    if resp.result then
+      vim.notify("Calendar added: " .. resp.result, vim.log.levels.INFO)
+    elseif resp.error then
+      vim.notify("Error: " .. resp.error.message, vim.log.levels.ERROR)
+    else
+      vim.notify("Unexpected response: " .. vim.inspect(resp), vim.log.levels.ERROR)
+    end
+  end)
+end, { nargs = "+" })
+
+-- List calendars
+vim.api.nvim_create_user_command("CalendarRPCList", function()
+  rpc.send_request("list_calendars", {}, function(resp)
+    if resp.result then
+      vim.notify(vim.inspect(resp.result), vim.log.levels.INFO)
+    elseif resp.error then
+      vim.notify("Error: " .. resp.error.message, vim.log.levels.ERROR)
+    else
+      vim.notify("Unexpected response: " .. vim.inspect(resp), vim.log.levels.ERROR)
+    end
+  end)
+end, {})
