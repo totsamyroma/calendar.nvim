@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-$stdout.sync = true
 STDOUT.sync = true
 
 require 'json'
@@ -20,7 +19,7 @@ def handle_request(request)
     calendars = [{ 'name' => 'work', 'url' => 'https://example.com/calendar.ics' }]
     { 'jsonrpc' => '2.0', 'id' => request['id'], 'result' => calendars }
   else
-    { 'jsonrpc' => '2.0', 'id' => request['id'], 'error' => { 'code' => -32601, 'message' => 'Method not found' } }
+    { 'jsonrpc' => '2.0', 'id' => request['id'], 'error' => { 'code' => -32_601, 'message' => 'Method not found' } }
   end
 end
 
@@ -32,14 +31,53 @@ while line = STDIN.gets
     logger.info("OUTPUT: #{response.to_json}")
     STDOUT.puts(response.to_json)
     STDOUT.flush
-  rescue => e
+  rescue StandardError => e
     error_response = {
       'jsonrpc' => '2.0',
       'id' => request && request['id'],
-      'error' => { 'code' => -32603, 'message' => e.message }
+      'error' => { 'code' => -32_603, 'message' => e.message }
     }
     logger.error("OUTPUT ERROR: #{error_response.to_json}")
     STDOUT.puts(error_response.to_json)
     STDOUT.flush
   end
 end
+
+# dir:server
+#   dir:src
+#     dir:service
+#       dir:calendar
+#         file:create_service.rb
+#         file:list_service.rb
+#         file:update_service.rb
+#         file:delete_service.rb
+#       dir:event
+#         file:create_service.rb
+#         file:list_service.rb
+#         file:update_service.rb
+#         file:delete_service.rb
+#     dir:presenter
+#       file:calendar_presenter.rb
+#       file:event_presenter.rb
+#     dir:repository
+#       file:calendar_repository.rb
+#       file:event_repository.rb
+#     dir:procedure
+#       dir:calendar
+#         file:create_procedure.rb
+#         file:list_procedure.rb
+#         file:update_procedure.rb
+#         file:delete_procedure.rb
+#       dir:event
+#         file:create_procedure.rb
+#         file:list_procedure.rb
+#         file:update_procedure.rb
+#         file:delete_procedure.rb
+#   dir:lib
+#     file:icalendar.rb
+#
+#   dir:config
+#     file:calendar.yml
+#   dir:log
+#     file:rpc.log
+#   file:server.rb
